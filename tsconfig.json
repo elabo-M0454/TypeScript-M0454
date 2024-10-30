@@ -1,0 +1,8 @@
+{
+    // other settings...
+    "ts-node": {
+      "esm": true,
+      "experimentalSpecifierResolution": "node"
+    }
+  }
+  
