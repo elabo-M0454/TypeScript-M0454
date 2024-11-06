@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import TodoList from "./TodoList";
+import { useRouter } from "next/navigation";
 export interface Todos {
   id: number;
   task: string;
@@ -25,7 +26,7 @@ export default function Home() {
   ]);
   const [newTodo, setNewTodo] = useState<string>("");
   const [selectedTodoId, setSelectedTodoId] = useState<number | null>(null);
-
+  const router = useRouter();
   const addTodo = () => {
     if (newTodo.trim() !== "") {
       const newTodoItem: Todos = {
@@ -108,6 +109,9 @@ export default function Home() {
     );
   };
 
+  const logout = () => {
+    router.push("/login");
+  };
   return (
     <div>
       ToDoApp
@@ -135,6 +139,12 @@ export default function Home() {
         style={{ cursor: "pointer", color: "blue", fontSize: "13px" }}
       >
         完了したものを削除
+      </span>
+      <span
+        onClick={logout}
+        style={{ cursor: "pointer", color: "blue", fontSize: "13px" }}
+      >
+        ログアウト
       </span>
     </div>
   );

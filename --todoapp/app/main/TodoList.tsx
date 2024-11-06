@@ -9,6 +9,7 @@ interface TodoListProps {
   onCommentAdd: (id: number, newComment: string) => void;
   onCommentDelete: (id: number, commentToDelete: string) => void;
 }
+
 const TodoList: FC<TodoListProps> = ({
   todoList,
   selectedTodoId,

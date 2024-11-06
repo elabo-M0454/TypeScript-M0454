@@ -1,5 +1,6 @@
 import React, { FC, useState, ReactNode } from "react";
 import { Todos } from "./page";
+
 interface TodoProps {
   todos: Todos;
   selectedTodoId: number | null;
@@ -7,7 +8,6 @@ interface TodoProps {
   onCommentAdd: (id: number, newComment: string) => void; // 親から渡されるコールバック
   onCommentDelete: (id: number, commentToDelete: string) => void;
 }
-
 const Todo: FC<TodoProps> = ({
   todos,
   selectedTodoId,
